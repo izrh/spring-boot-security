@@ -1,0 +1,24 @@
+﻿server:
+  port: 8001
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/cmcc?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    max-active: 5 #指定连接池中最大的活跃连接数.
+    max-idle: 2 #指定连接池最大的空闲连接数量.
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate.format_sql: true
+      hibernate.search.default.directory_provider: filesystem
+      hibernate.search.default.indexBase: ./indexes
+  
+logging:
+  config: classpath:logback-spring.xml
+  level: debug

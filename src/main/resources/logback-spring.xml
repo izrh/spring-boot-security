@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+    <!-- 开发、测试环境 -->
+    <springProfile name="dev,test">
+        <logger name="org.springframework" level="INFO"/>
+        <logger name="cn.ydimall" level="DEBUG" />
+        <logger name="org.hibernate" level="DEBUG" />
+    </springProfile>
+
+    <!-- 生产环境 -->
+    <springProfile name="prod">
+        <logger name="org.springframework" level="ERROR"/>
+        <logger name="cn.ydimall" level="INFO" />
+        <logger name="org.hibernate" level="INFO" />
+    </springProfile>
+
+</configuration>
